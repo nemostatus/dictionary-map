@@ -19,7 +19,7 @@
 
 //iteration
 //obj - for in
-//arr -for of
+//arr -for of, also for each but map tables use the value and key rather than just the element
 //map - for each
 
 // map.forEach((value, key) => {
@@ -35,9 +35,17 @@
 // 1 => number
 // a => b
 
-const groceries =new Map([["product", "price"]])
+const groceries =new Map([["product", "price"]])//creates new table with an array wrapping around key value pair names --> ["movie name","genre"]
 groceries.set("chocolate", 2.50)
 console.log(...groceries)
 groceries.set("graham crackers", 2.00)
-groceries.set("marshmallows", 1.75)
+groceries.set("marshmallows", 1.75) //set or write a key value pair array in table
 console.log(...groceries)
+console.log(groceries.has("milk")) //has method insert key name and if exists in table true else false
+console.log(groceries.get("graham crackers")) //returns value of key
+
+groceries.forEach((value, key)=>{
+    console.log( `${key} | ${value}`)
+}) //why use interpolation and template literals without them NaN is returned
+
+
