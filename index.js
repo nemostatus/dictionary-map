@@ -77,18 +77,31 @@ function addFieldToForm(){
     //loop through list once submitted and set new instance every other el
     let keytype = document.getElementById("keysDatatype").value
     let valtype = document.getElementById("valueDatatype").value
+    let orderedList = document.querySelector("#dynamic > ol")
+    let newli = document.createElement('li')
+    let FN = document.createElement("input");
+    let VN = document.createElement("input");
+    FN.setAttribute("type", keytype);
+    FN.setAttribute("name", "key");
+    FN.setAttribute("placeholder", "Key");
+    VN.setAttribute("type", valtype);
+    VN.setAttribute("name", "value");
+    VN.setAttribute("placeholder", "value");
+    newli.appendChild(FN)
+    newli.appendChild(VN)
+    orderedList.appendChild(newli)
     
-  
-    document.querySelector("#dynamic > ol").innerHTML += `
-   <li> <label>Key</label><input type="${keytype}"> <label>Value</label><input type="${valtype}">  </li> 
-    `
+
+    //.appendChild(`
+//    <li> <label>Key</label><input type="${keytype}"> <label>Value</label><input type="${valtype}">  </li> 
+//     `)
 }
 
 function createTable(event){
-    // let table = document.querySelector("#dynamic > ol")
-    // console.log(table)
     event.preventDefault()
-    console.log("www.")
+    let table = document.querySelector("#dynamic > ol")
+    console.log(table.children[0])
+    table.innerHTML=""
     // document.querySelector("#dynamic > ol").innerHTML =""
 }
 
