@@ -9,25 +9,39 @@
 <body>
 
  <h1>Create a table. </h1>
- <p>Choose datatype of Key </p>
+ <p><u>Choose datatype of Key</u> </p>
   <div id= "formPreset">
             <select name = "keysDatatype" id="keysDatatype">
             <option value="0">Choose the data type of your key.</option>
             <option value="text">Text</option>
             <option value="number">Number</option>
         </select>
-        <button id="keyBtn"></button>
+        <p><u>Choose datatype of value </u></p>
+        <div id= "formPreset">
+                  <select name = "valueDatatype" id="valueDatatype">
+                  <option value="0">Choose the data type of your value.</option>
+                  <option value="text">Text</option>
+                  <option value="number">Number</option>
+              </select>
+              <br>
+              <br>
+        <button id="keyBtn" onclick="addFieldToForm()">Create form for entry.</button>
     </div>
     
 
 <div id="dynamicForm">
     <form id="dynamic" onsubmit="displayTable()">
-      The values from the presets should create a form here and once submitted should display table
+     
+      <ol>
+
+      </ol>
+      <input type = "submit" value = "Create new table." id="newTable">
     </form>
 </div>
 
     <div id = "tblDisplay">
 
     </div>
+    <script src = "index.js"></script>
 </body>
 </html>

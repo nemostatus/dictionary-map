@@ -72,8 +72,14 @@ console.log(...chessPieces.keys())
 const tmnt = new Map([["turtleName","personality"],["rafael","aggressive"],["leonardo","brave"],["donatello","tactical"],["michaelAngelo","chaotic"]])
 tableGui(tmnt)
 
-function addKeyFieldToForm(){
-    let type = document.getElementById("keysDatatype").value
-    document.getElementById("dynamic").innerHTML += `<input type="${type}">`
+function addFieldToForm(){
+    console.log("rhj")
+    let keytype = document.getElementById("keysDatatype").value
+    let valtype = document.getElementById("valueDatatype").value
+    
+  
+    document.querySelector("#dynamic > ol").innerHTML += `
+   <li> <label>Key</label><input type="${keytype}"> <label>Value</label><input type="${valtype}">  </li> 
+    `
 }
 //user adds data type)dropdown list) and value of key and it passes it to this fn which in turn
