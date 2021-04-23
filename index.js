@@ -1,12 +1,12 @@
 // const emptyMap = new Map()
-// const map = new Map([
-//   ['key', 'value']
-// ])
+const map = new Map([
+  ['data', 'datatype']
+])
 // console.log(...map)
-// map.set(true,'boolean')
-// map.set(false,'boolean')
+map.set(true,'boolean')
+map.set(false,'boolean')
 // console.log(...map)
-// map.set(7,"blah") //the second param isnt strict and can be named whatever
+map.set(7,"number") //the second param isnt strict and can be named whatever
 // console.log(...map)
 // map.set(7,"number")//seems to overwrite the other value ??
 // console.log(...map)
@@ -44,8 +44,18 @@ console.log(...groceries)
 console.log(groceries.has("milk")) //has method insert key name and if exists in table true else false
 console.log(groceries.get("graham crackers")) //returns value of key
 
-groceries.forEach((value, key)=>{
+function tableGui(table){
+    console.log("")
+    console.log(`Table has ${table.size} entries.`)
+    console.log( `---------------------`)
+   
+table.forEach((value, key)=>{
+   
     console.log( `${key} | ${value}`)
-}) //why use interpolation and template literals without them NaN is returned
+    console.log( `---------------------`)
+})} //why use interpolation and template literals without them NaN is returned
+
+tableGui(groceries)
+tableGui(map)
 
 
