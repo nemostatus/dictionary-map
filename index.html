@@ -12,14 +12,14 @@
  <p><u>Choose datatype of Key</u> </p>
   <div id= "formPreset">
             <select name = "keysDatatype" id="keysDatatype">
-            <option value="0">Choose the data type of your key.</option>
+            <option value="text">Choose the data type of your key.</option>
             <option value="text">Text</option>
             <option value="number">Number</option>
         </select>
         <p><u>Choose datatype of value </u></p>
         <div id= "formPreset">
                   <select name = "valueDatatype" id="valueDatatype">
-                  <option value="0">Choose the data type of your value.</option>
+                  <option value="text">Choose the data type of your value.</option>
                   <option value="text">Text</option>
                   <option value="number">Number</option>
               </select>
@@ -30,12 +30,12 @@
     
 
 <div id="dynamicForm">
-    <form id="dynamic" onsubmit="displayTable()">
+    <form id="dynamic" onsubmit="createTable(event)">
      
       <ol>
 
       </ol>
-      <input type = "submit" value = "Create new table." id="newTable">
+      <input type = "submit" value = "Create new table."  >
     </form>
 </div>
 
