@@ -7,8 +7,27 @@
     <title>Document</title>
 </head>
 <body>
-    <div id = "groceryTable" onclick = "grocerytable()">
-    See your grocery table.
+
+ <h1>Create a table. </h1>
+ <p>Choose datatype of Key </p>
+  <div id= "formPreset">
+            <select name = "keysDatatype" id="keysDatatype">
+            <option value="0">Choose the data type of your key.</option>
+            <option value="text">Text</option>
+            <option value="number">Number</option>
+        </select>
+        <button id="keyBtn"></button>
+    </div>
+    
+
+<div id="dynamicForm">
+    <form id="dynamic" onsubmit="displayTable()">
+      The values from the presets should create a form here and once submitted should display table
+    </form>
+</div>
+
+    <div id = "tblDisplay">
+
     </div>
 </body>
 </html>
