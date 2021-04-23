@@ -1,3 +1,5 @@
+
+
 // const emptyMap = new Map()
 const map = new Map([
   ['data', 'datatype']
@@ -83,8 +85,10 @@ function addFieldToForm(){
     let VN = document.createElement("input");
     FN.setAttribute("type", keytype);
     FN.setAttribute("placeholder", "Key");
+    FN.setAttribute("class", "Key");
     VN.setAttribute("type", valtype);
     VN.setAttribute("placeholder", "value");
+    VN.setAttribute("class", "value");
     newli.appendChild(FN)
     newli.appendChild(VN)
     orderedList.appendChild(newli)
@@ -95,13 +99,23 @@ function addFieldToForm(){
 //     `)
 }
 
+
 function createTable(event){
     event.preventDefault()
     let table = document.querySelector("#dynamic > ol")
-    console.log(table.children)
+    let keys = document.querySelectorAll('#dynamic > ol > li > input.Key')
+    let values = document.querySelectorAll('#dynamic > ol > li > input.value')
     table.innerHTML=""
-    // document.querySelector("#dynamic > ol").innerHTML =""
+    let display = document.getElementById('tblDisplay')
+    let newTable = new Map([])
+    for(let i =0;i<keys.length;i++){
+        for(let i =0;i<values.length;i++){
+        newTable.set(keys[i],values[i])
+        }
+    }
+    console.log(...newTable)
 }
+    // document.querySelector("#dynamic > ol").innerHTML =""}
 
 //once all fields are filled out i need a way to uniquely set id(maybe ol li # somehow ) long enough to create the table, reset the form and display the table with the key and value
 //user adds data type)dropdown list) and value of key and it passes it to this fn which in turn
