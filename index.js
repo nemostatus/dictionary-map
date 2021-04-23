@@ -46,7 +46,7 @@ console.log(groceries.get("graham crackers")) //returns value of key
 
 function tableGui(table){
     console.log("")
-    console.log(`Table has ${table.size} entries.`)
+    console.log(`Table has ${table.size-1} entries.`)
     console.log( `---------------------`)
    
 table.forEach((value, key)=>{
@@ -66,3 +66,8 @@ chessPieces.set("rook", 5)
 chessPieces.set("queen", 9)
 chessPieces.set("king", 0)
 tableGui(chessPieces)
+
+console.log(...chessPieces.keys())
+
+const tmnt = new Map([["turtleName","personality"],["rafael","aggressive"],["leonardo","brave"],["donatello","tactical"],["michaelAngelo","chaotic"]])
+tableGui(tmnt)
