@@ -58,4 +58,11 @@ table.forEach((value, key)=>{
 tableGui(groceries)
 tableGui(map)
 
-
+const chessPieces = new Map([["piece","point"]])
+chessPieces.set("pawn", 1)
+chessPieces.set("knight", 3)
+chessPieces.set("bishop", 3)
+chessPieces.set("rook", 5)
+chessPieces.set("queen", 9)
+chessPieces.set("king", 0)
+tableGui(chessPieces)
