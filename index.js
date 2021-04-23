@@ -73,7 +73,7 @@ table.forEach((value, key)=>{
 // tableGui(tmnt)
 
 function addFieldToForm(){
-    console.log("rhj")
+    
     //loop through list once submitted and set new instance every other el
     let keytype = document.getElementById("keysDatatype").value
     let valtype = document.getElementById("valueDatatype").value
@@ -82,10 +82,8 @@ function addFieldToForm(){
     let FN = document.createElement("input");
     let VN = document.createElement("input");
     FN.setAttribute("type", keytype);
-    FN.setAttribute("name", "key");
     FN.setAttribute("placeholder", "Key");
     VN.setAttribute("type", valtype);
-    VN.setAttribute("name", "value");
     VN.setAttribute("placeholder", "value");
     newli.appendChild(FN)
     newli.appendChild(VN)
@@ -100,7 +98,7 @@ function addFieldToForm(){
 function createTable(event){
     event.preventDefault()
     let table = document.querySelector("#dynamic > ol")
-    console.log(table.children[0])
+    console.log(table.children)
     table.innerHTML=""
     // document.querySelector("#dynamic > ol").innerHTML =""
 }
