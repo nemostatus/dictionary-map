@@ -108,19 +108,24 @@ function createTable(event){
 
 function tableGui(table){
     console.log(table.size)
+    let breaks = document.createElement('br')
     let display = document.getElementById('tblDisplay')
     let tblSize = document.createElement('p')
-    let br = document.createElement('br')
-    let textToAdd = document.createTextNode(`Table has ${table.size} entrie(s) amd 1 title entry.`);
+    
+    let textToAdd = document.createTextNode(`Table has ${table.size} entrie(s) `);
     let spacer =  document.createTextNode(`--------------------------------------------`)
    
     
     tblSize.appendChild(textToAdd)
     display.appendChild(tblSize)
     display.appendChild(spacer)
-    display.appendChild(br)
+    display.appendChild(breaks)
+    
     table.forEach((value, key)=>{
-        display.appendChild(document.createTextNode(`${key} | ${value} `))
+
+        display.appendChild(document.createTextNode(`${key} | ${value} ` )) 
+        display.appendChild(document.createElement("br"))
+        
        })
    
    }
