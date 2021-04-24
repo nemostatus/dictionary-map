@@ -45,17 +45,7 @@ map.set(7,"number") //the second param isnt strict and can be named whatever
 // console.log(...groceries)
 // console.log(groceries.has("milk")) //has method insert key name and if exists in table true else false
 // console.log(groceries.get("graham crackers")) //returns value of key
-
-function tableGui(table){
-    console.log("")
-    console.log(`Table has ${table.size-1} entries.`)
-    console.log( `---------------------`)
-   
-table.forEach((value, key)=>{
-   
-    console.log( `${key} | ${value}`)
-    console.log( `---------------------`)
-})} //why use interpolation and template literals without them NaN is returned
+ //why use interpolation and template literals without them NaN is returned
 
 // tableGui(groceries)
 // tableGui(map)
@@ -106,15 +96,34 @@ function createTable(event){
     let keys = document.querySelectorAll('#dynamic > ol > li > input.Key')
     let values = document.querySelectorAll('#dynamic > ol > li > input.value')
     table.innerHTML=""
-    let display = document.getElementById('tblDisplay')
     let newTable = new Map([])
     for(let i =0;i<keys.length;i++){
         for(let i =0;i<values.length;i++){
-        newTable.set(keys[i],values[i])
+        newTable.set(keys[i].value,values[i].value)
         }
     }
     console.log(...newTable)
+    tableGui(newTable)
 }
+
+function tableGui(table){
+    console.log(table.size)
+    let display = document.getElementById('tblDisplay')
+    let tblSize = document.createElement('p')
+    let br = document.createElement('br')
+    let textToAdd = document.createTextNode(`Table has ${table.size} entrie(s) amd 1 title entry.`);
+    let spacer =  document.createTextNode(`--------------------------------------------`)
+   
+    
+    tblSize.appendChild(textToAdd)
+    display.appendChild(tblSize)
+    display.appendChild(spacer)
+    display.appendChild(br)
+    table.forEach((value, key)=>{
+        display.appendChild(document.createTextNode(`${key} | ${value} `))
+       })
+   
+   }
     // document.querySelector("#dynamic > ol").innerHTML =""}
 
 //once all fields are filled out i need a way to uniquely set id(maybe ol li # somehow ) long enough to create the table, reset the form and display the table with the key and value
